@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class SearchPage extends React.Component {
   render() {
     return (
       <div className="search-books">
         <div className="search-books-bar">
-          <button className="close-search" onClick={this.props.toShelvesPage}>Close</button>
+          <Link className="close-search" to="/">Close</Link>
           <div className="search-books-input-wrapper">
             <input type="text" placeholder="Search by title or author"/>
           </div>
