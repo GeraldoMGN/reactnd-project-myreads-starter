@@ -11,15 +11,16 @@ export default class SearchPage extends React.Component {
 
   updateQuery = query => {
     this.setState({query});
-    this.updateBooks(query);
+    query === '' ? 
+      this.setState({books: []}) : 
+      this.updateBooks(query);
   };
 
   updateBooks = query => {
     BooksAPI.search(query)
-      .then(books => {
-        books = books.error ? [] : books;
-        this.setState({books});
-      });
+      .then(books => this.setState({
+        books: books.error ? [] : books
+      }));
   };
 
   render() {
