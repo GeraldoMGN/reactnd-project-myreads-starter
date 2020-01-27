@@ -12,7 +12,7 @@ export default class SearchPage extends React.Component {
   updateQuery = query => {
     this.setState({query});
     this.updateBooks(query);
-  }
+  };
 
   updateBooks = query => {
     BooksAPI.search(query)
@@ -20,7 +20,7 @@ export default class SearchPage extends React.Component {
         books = books.error ? [] : books;
         this.setState({books});
       });
-  }
+  };
 
   render() {
     return (
