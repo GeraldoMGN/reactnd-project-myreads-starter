@@ -5,7 +5,7 @@ export default props => {
     props.changeShelf(event.nativeEvent.target.value);
 
   return (
-    <select defaultValue={props.onShelf} onChange={handleChange}>
+    <select defaultValue={props.onShelf || 'none'} onChange={handleChange}>
       <option value="move" disabled>Move to...</option>
       <option value="currentlyReading">Currently Reading</option>
       <option value="wantToRead">Want to Read</option>
