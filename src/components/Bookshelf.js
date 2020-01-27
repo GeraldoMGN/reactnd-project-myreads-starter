@@ -1,25 +1,17 @@
 import React from 'react';
-import BookContainer from './BookContainer';
+import BookGrid from './BookGrid';
 
 export default class BookShelf extends React.Component {
   render() {
-    const { title } = this.props;
+    const { title, books } = this.props;
 
     return (
       <div className="bookshelf">
         <h2 className="bookshelf-title">{title}</h2>
         <div className="bookshelf-books">
-          <ol className="books-grid">
-            {this.booksGrid()}
-          </ol>
+          <BookGrid books={books} updateBooks={this.props.updateBooks}/>
         </div>
       </div>
     );
   }
-
-  booksGrid = () => this.props.books.map(book =>
-    <li key={book.id}>
-      <BookContainer book={book} updateBooks={this.props.updateBooks}/>
-    </li>
-  )
 }
