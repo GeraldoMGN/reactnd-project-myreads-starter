@@ -26,7 +26,7 @@ export default class ShelvesPage extends React.Component {
       categorizedBooks[book.shelf] = (categorizedBooks[book.shelf] || []).concat(book);
       return categorizedBooks;
     }, {});
-  }
+  };
 
   render() {
     const {currentlyReading = [], wantToRead = [], read = []} = this.categorizeBooks(this.state.books);
