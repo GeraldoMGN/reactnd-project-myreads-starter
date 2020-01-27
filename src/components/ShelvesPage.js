@@ -10,7 +10,7 @@ export default class ShelvesPage extends React.Component {
     loaded: false
   }
 
-  componentDidMount() {
+  updateBooks = () => 
     BooksAPI.getAll()
       .then(books => {
         this.setState({
@@ -18,8 +18,9 @@ export default class ShelvesPage extends React.Component {
           loaded: true
         })
       });
-  }
 
+  componentDidMount = () => this.updateBooks();
+    
   categorizeBooks = books => {
     return books.reduce((categorizedBooks, book) => {
       categorizedBooks[book.shelf] = (categorizedBooks[book.shelf] || []).concat(book);
@@ -34,9 +35,15 @@ export default class ShelvesPage extends React.Component {
       <div className="list-books">
         <ListBooksHeader />
         <div className="list-books-content">
-          <BookShelf title='Currently Reading' books={currentlyReading} />
-          <BookShelf title='Want to Read' books={wantToRead} />
-          <BookShelf title='Read' books={read} />
+          <BookShelf title='Currently Reading' 
+                     books={currentlyReading} 
+                     updateBooks={this.updateBooks}/>
+          <BookShelf title='Want to Read' 
+                     books={wantToRead} 
+                     updateBooks={this.updateBooks} />
+          <BookShelf title='Read' 
+                     books={read} 
+                     updateBooks={this.updateBooks} />
         </div>
         <Link className="open-search" to="/search">
           Add a book

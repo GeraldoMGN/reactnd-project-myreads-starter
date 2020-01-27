@@ -19,7 +19,7 @@ export default class BookShelf extends React.Component {
 
   booksGrid = () => this.props.books.map(book =>
     <li key={book.id}>
-      <BookContainer book={book} />
+      <BookContainer book={book} updateBooks={this.props.updateBooks}/>
     </li>
   )
 }
