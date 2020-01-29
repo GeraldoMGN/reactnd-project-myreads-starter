@@ -3,14 +3,15 @@ import BookshelfSelector from './BookshelfSelector';
 
 export default props => {
   const { book, changeShelf } = props;
+  const backgroundImage = book.imageLinks ? book.imageLinks.thumbnail : null;
 
   return (
   <div className="book">
     <div className="book-top">
       <div className="book-cover" 
-           style={{ 
+           style={{
               width: 128, height: 192, 
-              backgroundImage: `url(${book.imageLinks.thumbnail})` 
+              backgroundImage: `url(${backgroundImage})` 
            }}>
       </div>
       <div className="book-shelf-changer">
