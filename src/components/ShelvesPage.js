@@ -10,23 +10,19 @@ export default class ShelvesPage extends React.Component {
     loaded: false
   }
 
-  updateBooks = () => 
-    BooksAPI.getAll()
-      .then(books => {
-        this.setState({
-          books,
-          loaded: true
-        })
-      });
+  updateBooks = () => BooksAPI.getAll()
+    .then(books => { this.setState({
+        books,
+        loaded: true
+      })
+    });
 
   componentDidMount = () => this.updateBooks();
     
-  categorizeBooks = books => {
-    return books.reduce((categorizedBooks, book) => {
+  categorizeBooks = books => books.reduce((categorizedBooks, book) => {
       categorizedBooks[book.shelf] = (categorizedBooks[book.shelf] || []).concat(book);
       return categorizedBooks;
-    }, {});
-  };
+  }, {});
 
   render() {
     const {currentlyReading = [], wantToRead = [], read = []} = this.categorizeBooks(this.state.books);
