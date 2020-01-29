@@ -11,9 +11,9 @@ export default class SearchPage extends React.Component {
 
   updateQuery = query => {
     this.setState({query});
-    query === '' ? 
-      this.setState({books: []}) : 
-      this.updateBooks(query);
+    query === '' 
+      ? this.setState({books: []}) 
+      : this.updateBooks(query);
   };
 
   updateBooks = query => {

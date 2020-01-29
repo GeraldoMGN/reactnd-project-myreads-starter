@@ -13,4 +13,4 @@ export default props => {
       <option value="none">None</option>
     </select>
   );
-}
+};

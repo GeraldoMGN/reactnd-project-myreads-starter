@@ -37,13 +37,16 @@ export default class ShelvesPage extends React.Component {
         <div className="list-books-content">
           <BookShelf title='Currently Reading' 
                      books={currentlyReading} 
-                     updateBooks={this.updateBooks}/>
+                     updateBooks={this.updateBooks} 
+          />
           <BookShelf title='Want to Read' 
                      books={wantToRead} 
-                     updateBooks={this.updateBooks} />
+                     updateBooks={this.updateBooks} 
+          />
           <BookShelf title='Read' 
                      books={read} 
-                     updateBooks={this.updateBooks} />
+                     updateBooks={this.updateBooks} 
+          />
         </div>
         <Link className="open-search" to="/search">
           Add a book

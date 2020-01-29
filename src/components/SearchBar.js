@@ -11,8 +11,9 @@ export default class SearchBar extends React.Component {
         <Link className="close-search" to="/">Close</Link>
         <div className="search-books-input-wrapper">
           <input type="text" 
-                placeholder="Search by title or author"
-                onChange={this.handleChangeQuery}/>
+                 placeholder="Search by title or author"
+                 onChange={this.handleChangeQuery}
+          />
         </div>
       </div>
     );
