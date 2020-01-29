@@ -28,7 +28,7 @@ export default class SearchPage extends React.Component {
       <div className="search-books">
         <SearchBar updateQuery={this.updateQuery}/>
         <div className="search-books-results">
-          <BookGrid books={this.state.books} />
+          {this.state.query !== '' && <BookGrid books={this.state.books} />}
         </div>
       </div>
     );
