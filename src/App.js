@@ -22,7 +22,9 @@ export default class BooksApp extends React.Component {
   render() {
     return (
       <div className="app">
-        <Route exact path="/search" component={SearchPage} />
+        <Route exact path="/search" render={() =>
+          <SearchPage shelfBooks={this.state.books} updateShelfBooks={this.updateBooks}/>}
+        />
         <Route exact path="/" render={() => 
           <ShelvesPage books={this.state.books} updateBooks={this.updateBooks} />}
         />
