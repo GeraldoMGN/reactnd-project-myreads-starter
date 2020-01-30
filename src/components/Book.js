@@ -9,10 +9,7 @@ export default props => {
   <div className="book">
     <div className="book-top">
       <div className="book-cover" 
-           style={{
-              width: 128, height: 192, 
-              backgroundImage: `url(${backgroundImage})` 
-           }}>
+           style={{backgroundImage: `url(${backgroundImage})`}}>
       </div>
       <div className="book-shelf-changer">
         <BookshelfSelector onShelf={book.shelf} changeShelf={changeShelf}/>
